@@ -1,34 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Serverless bits and bytes]]></title><description><![CDATA[Stuff I've learned on serverless development]]></description><link>https://tmanning.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 17 Feb 2021 06:15:22 GMT</lastBuildDate><item><title><![CDATA[Validating typescript Lambda input with Zod]]></title><description><![CDATA[It’s common for lambdas to be triggered via API Gateway, but SNS, SQS, etc will all feed lambdas with strings. When you’re writing lambdas…]]></description><link>https://tmanning.github.io/blog/zod-lambda-validation/</link><guid isPermaLink="false">https://tmanning.github.io/blog/zod-lambda-validation/</guid><pubDate>Wed, 17 Feb 2021 06:32:38 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 630px; &quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/f65f646db8ae147595a9c8d425971d63/302a4/zod.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 100%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEs0lEQVQ4y5VUaUxUVxQ+b0aaaJrWMmyCU5aZNzsMwz4O6AAqzIgMDCIgCI6AIIJUsUWRTdyXau1iqVYrtbiNUQFbCJDW1tKYmMambboY06RpTNukP00aecw9PfdhmzTpepKT8967937vO9855wI8tvjaq7Jb1l2GeN+Vf3E/xK+/AubqQfAOIZRNImgK9sIfllB3HSw1F8G89h1IbBxTWGouCKY1ZwRr/ZBgaxoTbBtHyccE+XvlW4K5aoDWT9PauMLiuywktdwE26ZJiHI0zoLF114DQ/lJSN/+pZDW/jmkPn8XzMTU2jAKSa0fQ9LmW5Cx81tIe+Ezev4Ikp+bgsSmSVqbAmPlACTUjxA4vROwDGZeOwgZHd8oMjq+Blvz+7XEcoS+X0qoG/LTZvJhf2LjqN/a8J7fuuEGxXcvU7xGa/0xS7c/yc/TfgUHldOkPyvs3d9BypbbzcQUF6RUYrRzM+qLDqKh5BgaVx1HrbsHF9rrMCrdh5Fp1RRr0FD6GlIWo6SaQvQeB0pfIWuYuu1TSG6dajGs7sdQUz5Tp1dP69xdkqFwj6TNa5cik8sklTZLCo61S/OjU6VwywopLnerJLp2PrJUDWBi08R1PyKYiBw4j0qkx3ibseJNXJhRw7T5OwLGkiOoK9jFnnXUsVDjclRpFzNyDNFls6jUNUx0dzND0X5m8OxjcblbJLHoCFL6F6Nzts0FbeGBeaTN9zrPQdQX9Ewbig5gjLOZhVsK2CxQFgfECGsxEivUF+6VgUR3F1MvWo8qTWYg3FrMEuqHUF96wg62lg+pn86nWTeM/Kp1ddFBT0AlOgkki4OxMLMLoxdvRP3KPuQ/o8jonb678ZlYO2WQFzBXnUNKtyH/NJJ+bXeUvE2sjaPlpsqzqNLlBILjHCzUsBTV9nU8PQLaz5lxhizCWiSnr9JksRBdzoyx/BRShXvdbyMcIh1BMecJ6rF7Ssfun3jLdOtXvYoLEr1UjO2zOpFr83ZgVEoFsV7CgjWZTCXKUdKXvEzaDb++6ReECQKLtNcJEOfeDVrPEai5i5B3Bonp2KCl6izqVvRMc3Zqu4+F6HOZzNq4nIWZXBgiOqfFwoNIvXgVOSsyTcE+gTQEeR75/JKOgljyCgTNmx9EG2+byk6gZmmbFLOkmYrUwmKzW5no6kRqlWlTxUnO7BbhzI1ybKQpO6WgZpenbnaW64fB1jTBo4LKD4ayN6KoSA8MJUfR4NkzY/QeRqP3EHVBr2Qq7+dgX6mMrjAdESAyinQ+rm13QFAGzQKGJZbKM5pGxaEmVfLK00Y7/XE6mhiSfoHIpNIZrbuX0hz5Ue3cqrPQrUMjqsx+8RE4Dz+EuaEi/MlilnVA1p6fIZ90pOGfk9b+Ba98lbHiNG8PKcJWihaf/6FYfDSDpor2fKIsHUco/wDh6bhM+EuLc/fJ8Sl1Mti77isX9f7Ar6VdxrKTSFoHqNdWZnTeA3vnfeUNKsZNcpXJBf9ovFJaz2HQeV+S3wvO88qPXjStPdfi6HsA2cdmlL/vDbV64T+ZueaCfDNT9YQF6T7grdFOPv64RbhRz8H/MhKfCnOJg8qAq+maD4n3yHrFLO/823O/AXTSHVmtA7YvAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Zod&quot;
-        title=&quot;Zod&quot;
-        src=&quot;/blog/static/f65f646db8ae147595a9c8d425971d63/f058b/zod.png&quot;
-        srcset=&quot;/blog/static/f65f646db8ae147595a9c8d425971d63/c26ae/zod.png 158w,
-/blog/static/f65f646db8ae147595a9c8d425971d63/6bdcf/zod.png 315w,
-/blog/static/f65f646db8ae147595a9c8d425971d63/f058b/zod.png 630w,
-/blog/static/f65f646db8ae147595a9c8d425971d63/40601/zod.png 945w,
-/blog/static/f65f646db8ae147595a9c8d425971d63/302a4/zod.png 1080w&quot;
-        sizes=&quot;(max-width: 630px) 100vw, 630px&quot;
-        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Serverless bits and bytes]]></title><description><![CDATA[Stuff I've learned on serverless development]]></description><link>https://tmanning.github.io/blog</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 17 Feb 2021 06:19:07 GMT</lastBuildDate><item><title><![CDATA[Validating typescript Lambda input with Zod]]></title><description><![CDATA[Zod
+It’s common for lambdas to be triggered via API Gateway, but SNS, SQS, etc will all feed lambdas with strings. When you’re writing…]]></description><link>https://tmanning.github.io/blog/zod-lambda-validation/</link><guid isPermaLink="false">https://tmanning.github.io/blog/zod-lambda-validation/</guid><pubDate>Wed, 17 Feb 2021 06:32:38 GMT</pubDate><content:encoded>&lt;p&gt;&lt;img src=&quot;/7f6d82dd866370ef221a3430f2a7e514/zod.svg&quot; alt=&quot;Zod&quot;&gt;
 It’s common for lambdas to be triggered via API Gateway, but SNS, SQS, etc will all feed lambdas with strings. When you’re writing lambdas that take in JSON string parameters, you’re going to want to validate the input and convert it into a first class statically-typed object as soon as possible - after all, that’s why we use typescript, right? Since typescript is a type-safe language (by definition), using real Typescript types is the way to go here. The best way to define your parameters is as first-class Types in Typescript, and then validate that the string you’ve been given matches the object type that you’ve defined. But how?&lt;/p&gt;
 &lt;p&gt;The way we used to validate input like this was via JSON schemas - we would define a schema and use a JSON schema validator like &lt;code class=&quot;language-text&quot;&gt;ajv&lt;/code&gt;. Maybe we would wrap our lambda in some middleware that would take in the schema and the event, use Middy to do the validation, and have the middleware spit out a validated object. But would it be typed? No! Then we’d also have to define a Typescript Type or Typescript Interface with essentially the same information as was in the JSON schema, and cast the object to that type. This is not a great developer experience.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/colinhacks/zod&quot;&gt;Zod&lt;/a&gt; is a library designed to make this easy; it lets you define a schema using native Typescript types. You can then ask Zod to validate the input for you and convert it to a first-class Typescript object - the best part is that your IDE’s Intellisense can understand it!  Let’s look at an example.&lt;/p&gt;
