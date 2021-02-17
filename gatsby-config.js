@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/blog',
   siteMetadata: {
-    title: `Tom Manning's blog`,
+    title: `Serverless bits and bytes`,
     author: {
       name: `Tom Manning`,
       summary: `Rackspace Cloud Native Development Solutions Architect`,
