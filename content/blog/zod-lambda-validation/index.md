@@ -3,7 +3,7 @@ title:  Validating typescript Lambda input with Zod
 date:   2021-02-16 22:32:38 -0800
 categories: zod lambda typescript validation
 ---
-![Zod](./zod.svg)
+![Zod](./zod.png)
 It's common for lambdas to be triggered via API Gateway, but SNS, SQS, etc will all feed lambdas with strings. When you're writing lambdas that take in JSON string parameters, you're going to want to validate the input and convert it into a first class statically-typed object as soon as possible - after all, that's why we use typescript, right? Since typescript is a type-safe language (by definition), using real Typescript types is the way to go here. The best way to define your parameters is as first-class Types in Typescript, and then validate that the string you've been given matches the object type that you've defined. But how?
 
 The way we used to validate input like this was via JSON schemas - we would define a schema and use a JSON schema validator like `ajv`. Maybe we would wrap our lambda in some middleware that would take in the schema and the event, use Middy to do the validation, and have the middleware spit out a validated object. But would it be typed? No! Then we'd also have to define a Typescript Type or Typescript Interface with essentially the same information as was in the JSON schema, and cast the object to that type. This is not a great developer experience.
