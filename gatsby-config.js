@@ -1,17 +1,19 @@
 module.exports = {
+  pathPrefix: '/blog',
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Tom Manning's blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Tom Manning`,
+      summary: `Rackspace Cloud Native Development Solutions Architect`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `Stuff I've learned on serverless development`,
+    siteUrl: `https://www.serverlesscnd.com/blog`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `tdmanning`,
     },
   },
   plugins: [
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
