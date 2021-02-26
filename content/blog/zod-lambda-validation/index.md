@@ -4,9 +4,11 @@ date:   2021-02-16 22:32:38 -0800
 categories: zod lambda typescript validation
 ---
 ![Zod](./zod.svg)
-It's common for lambdas to be triggered via API Gateway, but SNS, SQS, etc will all feed lambdas with strings. When you're writing lambdas that take in JSON string parameters, you're going to want to validate the input and convert it into a first class statically-typed object as soon as possible - after all, that's why we use typescript, right? Since typescript is a type-safe language (by definition), using real Typescript types is the way to go here. The best way to define your parameters is as first-class Types in Typescript, and then validate that the string you've been given matches the object type that you've defined. But how?
+It's common for lambdas to be triggered via API Gateway, but SNS, SQS, etc will all feed lambdas with strings. When you're writing lambdas that take in JSON string parameters, you're going to want to validate the input and convert it into a first class statically-typed object as soon as possible - after all, that's why we use typescript, right? 
 
-The way we used to validate input like this was via JSON schemas - we would define a schema and use a JSON schema validator like `ajv`. Maybe we would wrap our lambda in some middleware that would take in the schema and the event, use Middy to do the validation, and have the middleware spit out a validated object. But would it be typed? No! Then we'd also have to define a Typescript Type or Typescript Interface with essentially the same information as was in the JSON schema, and cast the object to that type. This is not a great developer experience.
+Since typescript is a type-safe language (by definition), using real Typescript types is the way to go here. The best way to define your parameters is as first-class Types in Typescript, and then validate that the string you've been given matches the object type that you've defined. But how?
+
+The way I've validated input like this in the past was via JSON schemas - I would define a schema and use a JSON schema validator like `ajv`. Maybe I'd wrap the lambda in some middleware that would take in the schema and the event, use Middy to do the validation, and have the middleware spit out a validated object (Onica's [sailplane](https://github.com/onicagroup/sailplane) made this easy). But would it be typed? No! Then I'd also have to define a Typescript Type or Typescript Interface with essentially the same information as was in the JSON schema, and cast the object to that type. This is not a great developer experience.
 
 [Zod](https://github.com/colinhacks/zod) is a library designed to make this easy; it lets you define a schema using native Typescript types. You can then ask Zod to validate the input for you and convert it to a first-class Typescript object - the best part is that your IDE's Intellisense can understand it!  Let's look at an example.
 
@@ -88,4 +90,6 @@ export const execute: SQSHandler = async event => {
 // Now you have a collection of objects that may be of type UpdateCommand or of type DeleteCommand
 ```
 
-We've barely scratched the surface of what Zod is capable of, but I hope it's sparked some possibilitied in your mind.
+Someone's even created some [middleware](https://github.com/lechodiman/middy-zod-validator) integrating Zod, if you choose to go that route.
+
+We've barely scratched the surface of what Zod is capable of, but I hope that for you this has sparked some possibilities.
