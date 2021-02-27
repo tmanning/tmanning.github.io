@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Serverless bits and bytes`,
+    title: `Serverless Cloud Native Development bits & bytes`,
     author: {
       name: `Tom Manning`,
       summary: `Rackspace Cloud Native Development Solutions Architect`,
