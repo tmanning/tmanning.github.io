@@ -6,7 +6,7 @@ module.exports = {
       summary: `Rackspace Cloud Native Development Solutions Architect`,
     },
     description: `Stuff I've learned on serverless development`,
-    siteUrl: `https://tmanning.github.io/blog`,
+    siteUrl: `https://blog.serverlesscnd.com`,
     social: {
       twitter: `tdmanning`,
     },
