@@ -9,9 +9,10 @@ module.exports = {
     siteUrl: `https://blog.serverlesscnd.com`,
     social: {
       twitter: `tdmanning`,
-    },
+    }
   },
   plugins: [
+    `gatsby-plugin-cname`,
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
